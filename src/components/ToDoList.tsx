@@ -8,6 +8,7 @@ import {
   ActivityIndicator,
   ScrollView,
   SafeAreaView,
+  RefreshControl,
 } from "react-native";
 import styles from "../../styles/styles";
 import { ToDo } from "../types";
@@ -15,27 +16,28 @@ import { ToDo } from "../types";
 const ToDoList = () => {
   const [todos, setTodos] = useState<ToDo[]>([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
-  async function fetchData() {
+  async function fetchData(isRefreshing = false) {
     try {
-      setLoading(true);
+      if (!isRefreshing) {
+        setLoading(true);
+      }
       const { data, error } = await supabase.from("ToDo_Table").select("*");
       if (error) {
-        throw new Error("Error fetching ToDos:" + error);
+        throw new Error("Error fetching ToDos: " + error.message);
       }
 
       if (!data) {
         throw new Error("No data received when fetching ToDos");
       }
-      setTodos(() => {
-        const updatedTodos = data as ToDo[];
-        setLoading(false);
-        return updatedTodos;
-      });
+
+      setTodos(data as ToDo[]);
     } catch (error) {
       console.error("Failed to fetch ToDos: " + error);
     } finally {
       setLoading(false);
+      setRefreshing(false);
     }
   }
 
@@ -46,6 +48,11 @@ const ToDoList = () => {
   useEffect(() => {
     console.log("Todos updated:", todos);
   }, [todos]);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    fetchData();
+  };
 
   const addToDo = async (title: string) => {
     try {
@@ -127,7 +134,11 @@ const ToDoList = () => {
           <ActivityIndicator size="large" color="#007BFF" />
         </View>
       ) : (
-        <ScrollView>
+        <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
           {todos.map((todo) => (
             <View key={todo.id} style={[styles.todoItem]}>
               <Text
