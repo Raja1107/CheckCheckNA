@@ -60,30 +60,23 @@ C) Run **CheckCheckNA** in your Browser
 ## Project Structure
 
 ```
-.env
-.expo/
-.vscode/
-assets/
-src/
-components/
-    Form.tsx
-    Supabase.ts
-    Todo.tsx
-    ToDoList.tsx
-types.ts
-styles/
-styles.ts
-App.tsx
-app.json
-babel.config.js
-env.d.ts
-package.json
-tsconfig.json
+CheckCheckNA/
+├── .expo/                   # Expo configuration files
+├── assets/                  # Static assets
+├── src/                     # Source files
+│   ├── components/          # React components
+│   │   ├── Form.tsx         # Form component
+│   │   ├── Supabase.ts      # Supabase utility
+│   │   ├── Todo.tsx         # Todo component
+│   │   └── ToDoList.tsx     # ToDoList component
+│   ├── types.ts             # TypeScript types
+├── styles/                  # Styling files
+│   └── styles.ts            # Global styles
+├── App.tsx                  # Main App component
+├── app.json                 # Expo app configuration
+├── babel.config.js          # Babel configuration
+├── env.d.ts                 # TypeScript declaration for environment variables
+├── package.json             # Project metadata and dependencies
+├── .env                     # Environment variables
+└── tsconfig.json            # TypeScript configuration
 ```
-
-- `App.tsx`: The main entry point of the application.
-- `src/components`: Contains the React components used in the app.
-- `src/types.ts`: TypeScript types used in the app.
-- `styles/styles.ts`: Contains the styles for the app.
-- `.env`: Environment variables file.
-- `env.d.ts`: TypeScript declaration for environment variables.
