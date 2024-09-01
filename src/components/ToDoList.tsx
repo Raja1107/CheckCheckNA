@@ -127,38 +127,42 @@ const ToDoList = () => {
   };
 
   return (
-    <SafeAreaView>
-      <Form addToDo={addToDo} />
-      {loading ? (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#007BFF" />
-        </View>
-      ) : (
-        <ScrollView
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-          }
-        >
-          {todos.map((todo) => (
-            <View key={todo.id} style={[styles.todoItem]}>
-              <Text
-                style={[
-                  styles.todoText,
-                  todo.is_complete && styles.todoItemComplete,
-                ]}
-              >
-                {todo.title}
-              </Text>
-              <Todo onUpdate={updateToDo} onDelete={deleteToDo} todo={todo} />
-            </View>
-          ))}
-          <Text style={styles.footerText}>
-            You have {todos.length} {todos.length > 1 ? "Things" : "Thing"} to
-            complete!
-          </Text>
-        </ScrollView>
-      )}
-    </SafeAreaView>
+    <ScrollView
+      style={styles.innerContainer}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
+    >
+      <Text style={styles.title}>INBOX</Text>
+      <SafeAreaView>
+        <Form addToDo={addToDo} />
+        {loading ? (
+          <View style={styles.loadingContainer}>
+            <ActivityIndicator size="large" color="#007BFF" />
+          </View>
+        ) : (
+          <ScrollView>
+            {todos.map((todo) => (
+              <View key={todo.id} style={[styles.todoItem]}>
+                <Text
+                  style={[
+                    styles.todoText,
+                    todo.is_complete && styles.todoItemComplete,
+                  ]}
+                >
+                  {todo.title}
+                </Text>
+                <Todo onUpdate={updateToDo} onDelete={deleteToDo} todo={todo} />
+              </View>
+            ))}
+            <Text style={styles.footerText}>
+              You have {todos.length} {todos.length > 1 ? "Things" : "Thing"} to
+              complete!
+            </Text>
+          </ScrollView>
+        )}
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 export default ToDoList;
