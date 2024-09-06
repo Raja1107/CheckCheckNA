@@ -133,7 +133,6 @@ const ToDoList = () => {
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
     >
-      <Text style={styles.title}>INBOX</Text>
       <SafeAreaView>
         <Form addToDo={addToDo} />
         {loading ? (

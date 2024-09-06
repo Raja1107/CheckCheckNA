@@ -78,6 +78,68 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#f0f9ff",
   },
+  loginContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#18181b",
+  },
+  loginFormContainer: {
+    width: "80%",
+    backgroundColor: "#0c4a6e",
+    padding: 20,
+    borderRadius: 10,
+  },
+  loginTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#f0f9ff",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  loginInput: {
+    backgroundColor: "#0369a1",
+    borderColor: "#0284c7",
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 10,
+    color: "#f0f9ff",
+  },
+  loginButton: {
+    backgroundColor: "#0284c7",
+    padding: 10,
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  loginButtonText: {
+    color: "#f0f9ff",
+    fontWeight: "bold",
+  },
+  errorText: {
+    color: "#ef4444",
+    marginBottom: 10,
+  },
+  headerContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+  },
+  logoutButton: {
+    position: "absolute",
+    right: 0,
+    top: 0,
+    backgroundColor: "#ef4444",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+  logoutButtonText: {
+    color: "#ffffff",
+    fontWeight: "bold",
+    fontSize: 14,
+  },
 });
 
 export default styles;
