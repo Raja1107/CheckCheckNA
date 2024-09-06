@@ -23,6 +23,15 @@
     "web": {
       "favicon": "./assets/images/android-chrome-192x192.png",
       "backgroundColor": "#18181b"
-    }
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/android-chrome-192x192.png",
+          "color": "#18181b"
+        }
+      ]
+    ]
   }
 }
