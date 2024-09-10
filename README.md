@@ -6,31 +6,15 @@ CheckCheckNA is a React Native application for managing your tasks and uses Reac
 
 - [Installation](#installation)
 - [Running the Project](#running-the-project)
-- [Project Structure](#project-structure)
 
 ## Installation
 
-1. **Clone the repository:**
+**Install dependencies:**
+Make sure you have Node.js and npm installed. Then run:
 
-   ```sh
-   git clone https://github.com/Raja1107/CheckCheckNA.git
-   cd CheckCheckNA
-   ```
-
-2. **Install dependencies:**
-   Make sure you have Node.js and npm installed. Then run:
-
-   ```sh
-   npm install
-   ```
-
-3. **Set up Environment Variable:**
-
-   Create a `.env` file in the root of your project and add your Supabase key:
-
-   ```sh
-   SUPABASE_KEY=your_supabase_key
-   ```
+```sh
+npm install
+```
 
 ## Running the Project
 
@@ -56,27 +40,3 @@ B) If you have an Android or iOS Emulator installed:
 C) Run **CheckCheckNA** in your Browser
 
 - In the Terminal press `W` to run the App in your Browser.
-
-## Project Structure
-
-```
-CheckCheckNA/
-├── .expo/                   # Expo configuration files
-├── assets/                  # Static assets
-├── src/                     # Source files
-│   ├── components/          # React components
-│   │   ├── Form.tsx         # Form component
-│   │   ├── Supabase.ts      # Supabase utility
-│   │   ├── Todo.tsx         # Todo component
-│   │   └── ToDoList.tsx     # ToDoList component
-│   ├── types.ts             # TypeScript types
-├── styles/                  # Styling files
-│   └── styles.ts            # Global styles
-├── App.tsx                  # Main App component
-├── app.json                 # Expo app configuration
-├── babel.config.js          # Babel configuration
-├── env.d.ts                 # TypeScript declaration for environment variables
-├── package.json             # Project metadata and dependencies
-├── .env                     # Environment variables
-└── tsconfig.json            # TypeScript configuration
-```
