@@ -18,6 +18,8 @@ const ToDoList = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
+  const incompleteTodos = todos.filter((todo) => !todo.is_complete);
+
   async function fetchData(isRefreshing = false) {
     try {
       if (!isRefreshing) {
@@ -76,7 +78,6 @@ const ToDoList = () => {
 
   const updateToDo = async (todo: ToDo) => {
     try {
-      // Attempt to update the todo in the database by id
       const { data, error } = (await supabase
         .from("ToDo_Table")
         .update(todo)
@@ -89,12 +90,10 @@ const ToDoList = () => {
         );
       }
 
-      // Ensure data is properly typed and not empty
       if (!data || data.length === 0) {
         throw new Error(`No data received when updating ToDo (ID: ${todo.id})`);
       }
 
-      // Update the state with the updated todo
       setTodos((prevTodos) =>
         prevTodos.map((t) => (t.id === todo.id ? data[0] : t))
       );
@@ -119,7 +118,6 @@ const ToDoList = () => {
         throw new Error("No data received when deleting ToDo (ID: ${id})");
       }
 
-      // Remove the deleted todo from the state
       setTodos((prevTodos) => prevTodos.filter((t) => t.id !== id));
     } catch (error) {
       console.log("Failed to delete ToDo (ID: ${id}:", error);
@@ -155,8 +153,15 @@ const ToDoList = () => {
               </View>
             ))}
             <Text style={styles.footerText}>
-              You have {todos.length} {todos.length > 1 ? "Things" : "Thing"} to
-              complete!
+              {incompleteTodos.length === 0 ? (
+                "You're all done! Go and add some more tasks!"
+              ) : (
+                <Text>
+                  You have {incompleteTodos.length}{" "}
+                  {incompleteTodos.length > 1 ? "Things " : "Thing "}
+                  to complete!
+                </Text>
+              )}
             </Text>
           </ScrollView>
         )}
