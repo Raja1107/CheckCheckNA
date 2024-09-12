@@ -51,7 +51,7 @@ const Form = ({ addToDo }: FormProps) => {
         style={[styles.input, { backgroundColor: "white" }]}
         value={title}
         onChangeText={setTitle}
-        placeholder="Add a new Task"
+        placeholder="Add a new task"
       />
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Ionicons style={styles.button} name="add-circle" size={32}></Ionicons>

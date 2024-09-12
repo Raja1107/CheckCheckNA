@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   todoItemComplete: {
     textDecorationLine: "line-through",
-    color: "gray",
+    color: "#A9A9A9",
   },
   todoText: {
     flex: 1,

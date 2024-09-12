@@ -164,7 +164,7 @@ const ToDoList = () => {
               ) : (
                 <Text>
                   You have {incompleteTodos.length}{" "}
-                  {incompleteTodos.length > 1 ? "Things " : "Thing "}
+                  {incompleteTodos.length > 1 ? "Tasks " : "Task "}
                   to complete!
                 </Text>
               )}
