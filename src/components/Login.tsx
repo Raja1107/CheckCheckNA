@@ -39,6 +39,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     <View style={styles.loginContainer}>
       <View style={styles.loginFormContainer}>
         <Text style={styles.loginTitle}>Login to CheckCheckNA</Text>
+        <Text style={styles.inputLabel}>Email</Text>
         <TextInput
           style={styles.loginInput}
           placeholder="Enter your email"
@@ -48,6 +49,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           keyboardType="email-address"
           autoCapitalize="none"
         />
+        <Text style={styles.inputLabel}>Password</Text>
         <TextInput
           style={styles.loginInput}
           placeholder="Enter your password"

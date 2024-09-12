@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   loginTitle: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: "bold",
     color: "#f0f9ff",
     textAlign: "center",
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     padding: 10,
-    marginBottom: 10,
+    marginBottom: 20,
     color: "#f0f9ff",
   },
   loginButton: {
@@ -121,6 +121,11 @@ const styles = StyleSheet.create({
   loginButtonText: {
     color: "#f0f9ff",
     fontWeight: "bold",
+  },
+  inputLabel: {
+    color: "#f0f9ff",
+    fontSize: 14,
+    marginBottom: 8,
   },
   errorText: {
     color: "#ef4444",
