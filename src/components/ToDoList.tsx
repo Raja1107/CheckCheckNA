@@ -139,8 +139,14 @@ const ToDoList = () => {
           </View>
         ) : (
           <ScrollView>
-            {todos.map((todo) => (
-              <View key={todo.id} style={[styles.todoItem]}>
+            {todos.map((todo, index) => (
+              <View
+                key={todo.id}
+                style={[
+                  styles.todoItem,
+                  index % 2 === 0 ? styles.evenPair : styles.oddPair,
+                ]}
+              >
                 <Text
                   style={[
                     styles.todoText,

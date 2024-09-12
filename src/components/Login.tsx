@@ -41,8 +41,8 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         <Text style={styles.loginTitle}>Login to CheckCheckNA</Text>
         <TextInput
           style={styles.loginInput}
-          placeholder="Email"
-          placeholderTextColor="#a0aec0"
+          placeholder="Enter your email"
+          placeholderTextColor="#38BDF8"
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
@@ -50,8 +50,8 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         />
         <TextInput
           style={styles.loginInput}
-          placeholder="Password"
-          placeholderTextColor="#a0aec0"
+          placeholder="Enter your password"
+          placeholderTextColor="#38BDF8"
           value={password}
           onChangeText={setPassword}
           secureTextEntry

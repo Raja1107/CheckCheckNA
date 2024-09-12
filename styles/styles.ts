@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   innerContainer: {
-    backgroundColor: "#0c4a6e",
+    backgroundColor: "#082f49",
     borderRadius: 8,
     top: 16,
     padding: 16,
@@ -71,6 +71,12 @@ const styles = StyleSheet.create({
   todoText: {
     flex: 1,
     color: "#FFFFFF",
+  },
+  evenPair: {
+    backgroundColor: "#0369a1",
+  },
+  oddPair: {
+    backgroundColor: "#0284C7",
   },
   footerText: {
     textAlign: "center",
