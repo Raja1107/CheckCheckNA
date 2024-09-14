@@ -2,11 +2,6 @@
 
 CheckCheckNA is a React Native application for managing your tasks and uses React Native with Expo, Supabase, and TypeScript. This Project was developed for a Bachelorthesis.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Running the Project](#running-the-project)
-
 ## Installation
 
 **Install dependencies:**
