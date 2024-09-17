@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { View, TextInput, TouchableOpacity, Alert } from "react-native";
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  Platform,
+} from "react-native";
 import { FormProps } from "../types";
 import styles from "../../styles/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -52,6 +58,7 @@ const Form = ({ addToDo }: FormProps) => {
         value={title}
         onChangeText={setTitle}
         placeholder="Add a new task"
+        placeholderTextColor={Platform.OS === "ios" ? "#a9a9a9" : "#cfcfcf"}
       />
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Ionicons style={styles.button} name="add-circle" size={32}></Ionicons>

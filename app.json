@@ -18,7 +18,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/android-chrome-192x192.png",
         "backgroundColor": "#18181b"
-      }
+      },
+      "package": "com.checkcheckna.app"
     },
     "web": {
       "favicon": "./assets/images/android-chrome-192x192.png",
@@ -31,7 +32,13 @@
           "icon": "./assets/images/android-chrome-192x192.png",
           "color": "#18181b"
         }
-      ]
-    ]
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "79535ac1-aeaf-459d-b571-6b72c1768d80"
+      }
+    }
   }
 }
